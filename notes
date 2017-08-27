@@ -1,0 +1,21 @@
+CLI
+
+Welcome to your resource for Smorgasburg locations!
+1. Smorgasburg Prospect Park
+2. Smorgasburg Williamsburg
+3. Smorgasburg Square
+
+Please enter the number of the location to see more information.
+
+get input of a number.
+
+Smorgasburg Prospect Park - Sunday - 11am - 6pm - address
+Smorgasburg Williamsburg - Saturday - 11am-6pm -address
+Smorgasburg Square - Saturday and Sunday - 11am-6pm - address
+
+:name, :day , :time , :address
+
+To see more info of another location enter 'see more'. Otherwise enter 'exit.'
+
+Displays list again if 'see more'
+exits app if exit
