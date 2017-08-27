@@ -7,14 +7,13 @@ class Smorgasburg::CLI
 
 def list_locations
   #first hard code to make sure it works, then use scrape to create objects
-  puts "Please enter the number to see more info of the location."
 
   @locations = Smorgasburg::Scraper.details
   @locations.each.with_index(1) do |local, i|
     puts " #{i}. #{local.name}"
   end
 
-
+  puts "Please enter the number to see more info of the location."
   input = gets.strip
   index = input.to_i - 1
 
@@ -31,12 +30,15 @@ def list_locations
 
 def more_options
   puts "To see more info of another location enter 'see more'. Otherwise enter 'exit.'"
-  input = gets.strip
+  input = gets.strip.downcase
 
-  if input != "exit"
+  if input == "exit"
+    puts "Goodbye!"
+  elsif input == "see more"
     list_locations
   else
-    puts "Goodbye!"
+    puts "Invalid input."
+    more_options
   end
 
 end
