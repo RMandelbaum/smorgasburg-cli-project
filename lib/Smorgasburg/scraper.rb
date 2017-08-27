@@ -1,6 +1,10 @@
+require "open-uri"
+require "nokogiri"
+require "pry"
+
 class Smorgasburg::Scraper
 
-attr_accessor :name, :day , :time , :address
+attr_accessor :name, :time , :address
 
 def self.details
   self.scrape_info
@@ -15,30 +19,38 @@ def self.scrape_info
 end
 
 def self.scrape_williamsburg
-  location_1 = self.new
-  location_1.name = "Smorgasburg Williamsburg"
-  location_1.day = "Saturday"
-  location_1.time = "11am -6pm"
-  location_1.address = "Williamsburg N7th Street"
-  location_1
-end
+  html = open("https://www.smorgasburg.com/saturday-williamsburg/")
+  doc = Nokogiri::HTML(html)
 
-def self.scrape_prospect_park
-  location_2 = self.new
-  location_2.name = "Smorgasburg Prospect Park"
-  location_2.day = "Sunday"
-  location_2.time = "11am -6pm"
-  location_2.address = "Prospect Park-Well House"
-  location_2
-end
-
-def self.scrape_square
-  location_3 = self.new
-  location_3.name = "Smorgasburg Square"
-  location_3.day = "Saturday and Sunday"
-  location_3.time = "11am -6pm"
-  location_3.address = "IDK"
-  location_3
-end
-
+   location = self.new
+#
+   location.name = doc.css("div .project-slide-description-text p").first.text
+#   location.time = doc.css("div .project-slide-description-text p p").text
+#   location.address = doc.css("div .project-slide-description-text p p p").text
+  location
+  end
+#
+ def self.scrape_prospect_park
+   doc = Nokogiri::HTML(open("https://www.smorgasburg.com/sunday-smorgasburg/"))
+   location = self.new
+#
+   location.name = doc.css("div .project-slide-description-text p").first.text
+#   location.day = doc.css("").text
+#   location.time = doc.css("").text
+#   location.address = doc.css("")
+  location
+ end
+#
+ def self.scrape_square
+   doc = Nokogiri::HTML(open("https://www.smorgasburg.com/smorgasburg-varick/"))
+   location = self.new
+#
+    location.name = doc.css("div .project-slide-description-text p").first.text
+#   location.day = doc.css("").text
+#   location.time = doc.css("").text
+#   location.address = doc.css("")
+   location
+ end
+#
+# end
 end

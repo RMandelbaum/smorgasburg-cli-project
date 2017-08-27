@@ -23,7 +23,7 @@ def list_locations
 
   else
     smorg = @locations[index]
-    puts "#{smorg.name} - #{smorg.day} - #{smorg.time} - #{smorg.address}"
+    puts "#{smorg.name} - #{smorg.time} - #{smorg.address}"
    end
    more_options
   end
