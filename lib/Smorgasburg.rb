@@ -5,3 +5,4 @@ module Smorgasburg
 end
 
 require_relative "./Smorgasburg/cli"
+require_relative "./Smorgasburg/scraper"
