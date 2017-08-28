@@ -1,7 +1,3 @@
-require "open-uri"
-require "nokogiri"
-require "pry"
-
 class Smorgasburg::Scraper
 
 attr_accessor :name, :time , :address
