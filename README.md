@@ -1,28 +1,15 @@
 # Smorgasburg
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Smorgasburg`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to your Smorgasburg Food Festival gem! Here you will be able to view a list of festival locations and then use the prompt to view each location's time and address.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'Smorgasburg'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install Smorgasburg
 
 ## Usage
 
-TODO: Write usage instructions here
+Enter 'Smorgasburg' and follow the prompts
 
 ## Development
 
@@ -38,4 +25,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'rlman
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
