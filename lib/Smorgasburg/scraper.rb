@@ -21,36 +21,34 @@ end
 def self.scrape_williamsburg
   html = open("https://www.smorgasburg.com/saturday-williamsburg/")
   doc = Nokogiri::HTML(html)
-
    location = self.new
 #
    location.name = doc.css("div .project-slide-description-text p").first.text
-#   location.time = doc.css("div .project-slide-description-text p p").text
+   location.time = doc.css("div .project-slide-description-text p + p").first.text
 #   location.address = doc.css("div .project-slide-description-text p p p").text
   location
   end
 #
  def self.scrape_prospect_park
-   doc = Nokogiri::HTML(open("https://www.smorgasburg.com/sunday-smorgasburg/"))
+   html = open("https://www.smorgasburg.com/sunday-smorgasburg/")
+   doc = Nokogiri::HTML(html)
    location = self.new
 #
    location.name = doc.css("div .project-slide-description-text p").first.text
-#   location.day = doc.css("").text
-#   location.time = doc.css("").text
+   location.time = doc.css("div .project-slide-description-text p + p").first.text
 #   location.address = doc.css("")
   location
  end
-#
- def self.scrape_square
-   doc = Nokogiri::HTML(open("https://www.smorgasburg.com/smorgasburg-varick/"))
-   location = self.new
-#
+# #
+  def self.scrape_square
+    html = open("https://www.smorgasburg.com/smorgasburg-varick/")
+    doc = Nokogiri::HTML(html)
+    location = self.new
+
     location.name = doc.css("div .project-slide-description-text p").first.text
-#   location.day = doc.css("").text
-#   location.time = doc.css("").text
-#   location.address = doc.css("")
+   location.time = doc.css("div .project-slide-description-text p + p").first.text
+# #   location.address = doc.css("")
    location
- end
-#
-# end
+  end
+
 end
