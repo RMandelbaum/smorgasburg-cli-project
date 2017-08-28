@@ -46,5 +46,4 @@ def self.scrape_williamsburg
     location.address = doc.css("div .project-slide-description-text p + p + p").first.text
     location
   end
-
 end
