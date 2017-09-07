@@ -7,9 +7,8 @@ class Smorgasburg::CLI
 
 def list_locations
   #first hard code to make sure it works, then use scrape to create objects
-
-  @locations = Smorgasburg::Scraper.details
-  @locations.each.with_index(1) do |local, i|
+  Smorgasburg::Scraper.scrape_info
+  Smorgasburg::Location.all.each.with_index(1) do |local, i|
     puts " #{i}. #{local.name}"
   end
 
@@ -22,7 +21,7 @@ def list_locations
     list_locations
 
   else
-    smorg = @locations[index]
+    smorg = Smorgasburg::Location.all[index]
     puts "#{smorg.name} - #{smorg.time} - #{smorg.address}"
    end
    more_options
